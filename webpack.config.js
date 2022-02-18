@@ -1,8 +1,8 @@
 const path = require('path')
 const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
-const CopyPlugin = require("copy-webpack-plugin")
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const CopyPlugin = require('copy-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const isProd = process.env.NODE_ENV === 'production'
 const isDev = !isProd
@@ -14,7 +14,7 @@ const jsLoaders = () => {
     {
       loader: 'babel-loader',
       options: {
-        presets: ['@babel/preset-env'],
+        presets: ['@babel/preset-env']
       }
     }
   ]
@@ -28,7 +28,7 @@ const jsLoaders = () => {
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
-  mode: "development",
+  mode: 'development',
   entry: ['@babel/polyfill', './index.js'],
   output: {
     filename: filename('js'),
@@ -43,7 +43,7 @@ module.exports = {
   },
   devtool: isDev ? 'source-map' : false,
   devServer: {
-    port: 4200,
+    port: 3000,
     hot: isDev
   },
   plugins: [
@@ -77,8 +77,8 @@ module.exports = {
               reloadAll: true
             }
           },
-          "css-loader",
-          "sass-loader",
+          'css-loader',
+          'sass-loader'
         ],
       },
       {
@@ -86,7 +86,6 @@ module.exports = {
         exclude: /node_modules/,
         use: jsLoaders()
       }
-    ],
+    ]
   }
-
 }
