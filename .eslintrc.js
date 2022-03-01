@@ -5,6 +5,7 @@ module.exports = {
     "es6": true
   },
   "extends": ["eslint:recommended", "google"],
+  "parser": "babel-eslint",
   "parserOptions": {
     "ecmaVersion": 6,
     "sourceType": "module"
@@ -16,6 +17,10 @@ module.exports = {
     "linebreak-style": "off",
     "comma-dangle": "off",
     "arrow-parens": "off",
-    "require-jsdoc": "off"
+    "require-jsdoc": "off",
+    "no-trailing-spaces": "off",
+    "operator-linebreak": "off",
+    "indent": "off",
+    "max-len": "off"
   }
 }
