@@ -21,6 +21,7 @@ module.exports = {
     "no-trailing-spaces": "off",
     "operator-linebreak": "off",
     "indent": "off",
-    "max-len": "off"
+    "max-len": "off",
+    "no-prototype-builtins": "off"
   }
 }
