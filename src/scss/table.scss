@@ -2,6 +2,7 @@
 @import "variables";
 
 .excel__table {
+  overflow: hidden;
   position: absolute;
   left: 0;
   right: 0;
@@ -25,6 +26,8 @@
     border: 1px solid $border-color;
     background: #f8f9fa;
     border-top: none;
+
+    position: relative;
   }
 
   .row-data {
@@ -43,6 +46,8 @@
     height: 100%;
     border-top: none;
     border-left: none;
+
+    position: relative;
   }
 
   .cell {
@@ -59,10 +64,40 @@
 
     &.selected {
       border: none;
-      outline: 2px solid #3c74ff;
+      outline: 2px solid $primary-color;
       z-index: 2;
     }
   }
 
+  .col-resize, .row-resize {
+    z-index: 1000;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background: $primary-color;
+    opacity: 0;
 
+    &:hover,
+    &:active {
+      opacity: 1;
+    }
+  }
+
+  .col-resize {
+    width: 4px;
+    top: 0;
+
+    &:hover {
+      cursor: ew-resize;
+    }
+  }
+
+  .row-resize {
+    height: 4px;
+    left: 0;
+
+    &:hover {
+      cursor: n-resize;
+    }
+  }
 }
