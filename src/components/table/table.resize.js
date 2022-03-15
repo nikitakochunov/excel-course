@@ -4,7 +4,9 @@ export function resizeHandler($root, event) {
   const $resizer = $(event.target)
 
   const $parent = $resizer.closest('[data-type="resizable"]')
+  
   const coords = $parent.getCoords
+
   const tableHeight = $root.getCoords.height - 24
   const tableWidth = $root.getCoords.width - 40
 
@@ -24,14 +26,12 @@ export function resizeHandler($root, event) {
 
   document.onmousemove = e => {
     if (isCol) {
-      const delta = e.pageX - coords.right
+      const delta = e.clientX - coords.right
       value = coords.width + delta
-
       $resizer.css({right: -delta + 'px'})
     } else {
-      const delta = e.pageY - coords.bottom
+      const delta = e.clientY - coords.bottom
       value = coords.height + delta
-
       $resizer.css({bottom: -delta + 'px'})
     }
   }

@@ -22,6 +22,7 @@ module.exports = {
     "operator-linebreak": "off",
     "indent": "off",
     "max-len": "off",
-    "no-prototype-builtins": "off"
+    "no-prototype-builtins": "off",
+    "space-before-function-paren": "off"
   }
 }
